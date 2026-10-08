@@ -137,6 +137,103 @@ flowchart TD
 
 ---
 
+### 3. The Transfer Lifecycle Loop (Shared-Memory Flywheel)
+
+Following the continuous feedback pattern from editorial system architectures, Blip operates an active **Session State Journal** as the shared-memory hub. Every stage in the transfer lifecycle reads from and writes back to this central journal:
+
+```mermaid
+flowchart TD
+    subgraph CentralHub["Shared Session Hub"]
+        M["<b>Shared Session Memory</b><br/><i>one record, every transfer loop</i>"]
+    end
+
+    Capture["<b>Discovery (mDNS)</b><br/><i>peers in / handshake</i>"]
+    Inspect["<b>Stage & Index</b><br/><i>file hierarchy indexed</i>"]
+    Authorize["<b>Authorize (TLS)</b><br/><i>peer approved / keys verified</i>"]
+    StreamChunk["<b>Stream Chunks</b><br/><i>bsarchive wire frames</i>"]
+    Verify["<b>Verify Checksum</b><br/><i>SHA-256 committed</i>"]
+    ResumeSync["<b>Adapt & Resume</b><br/><i>generation switch / retry</i>"]
+
+    %% Flywheel outer ring
+    Capture --> Inspect
+    Inspect --> Authorize
+    Authorize --> StreamChunk
+    StreamChunk --> Verify
+    Verify --> ResumeSync
+    ResumeSync --> Capture
+
+    %% Dashed write-back lines to shared memory hub
+    Capture -. "PEER SIGNALS" .-> M
+    Inspect -. "METADATA INDEX" .-> M
+    Authorize -. "HANDSHAKE APPROVAL" .-> M
+    StreamChunk <-. "BYTE OFFSETS" .-> M
+    Verify -. "BLOCK CHECKSUMS" .-> M
+    ResumeSync <-. "RESUME ANCHOR" .-> M
+
+    classDef loopNode fill:#FFFFFF,stroke:#64748B,stroke-width:1.5px,color:#0F172A;
+    classDef hubStyle fill:#1E293B,stroke:#38BDF8,stroke-width:2.5px,color:#FFFFFF;
+    classDef actionHighlight fill:#FFF7ED,stroke:#F97316,stroke-width:2px,color:#9A3412;
+
+    class Capture,Inspect,StreamChunk,Verify,ResumeSync loopNode;
+    class CentralHub,M hubStyle;
+    class Authorize actionHighlight;
+```
+
+---
+
+### 4. Direct LAN vs. WAN Edge Relay Data Path
+
+```mermaid
+flowchart LR
+    subgraph Local["Direct P2P LAN Mode (Zero Quota)"]
+        direction LR
+        DevA1["💻 Sender<br/>(Local Wi-Fi)"] == "🚀 Direct Local Socket (Raw Wire Speed)" ==> DevB1["📱 Receiver<br/>(Local Wi-Fi)"]
+    end
+
+    subgraph Internet["Encrypted WAN Relay Mesh (Symmetric NAT)"]
+        direction LR
+        DevA2["💻 Sender<br/>(Remote Peer)"] -- "TLS Upload Stream" --> RelayNode["🌐 Blip Multi-Gigabit Edge Node<br/><i>(Zero Storage / In-flight Pass-through)</i>"]
+        RelayNode -- "TLS Download Stream" --> DevB2["📱 Receiver<br/>(Remote Peer)"]
+    end
+
+    classDef devBox fill:#0F172A,stroke:#38BDF8,stroke-width:1.5px,color:#F8FAFC;
+    classDef relayBox fill:#1E293B,stroke:#F59E0B,stroke-width:2px,color:#FEF3C7;
+    class DevA1,DevB1,DevA2,DevB2 devBox;
+    class RelayNode relayBox;
+```
+
+---
+
+### 5. `bsarchive` Streaming Container Pipeline
+
+```mermaid
+flowchart LR
+    subgraph SenderSide["Sender Storage Pipeline"]
+        D["Deep Folder Tree / Files"] --> S["Directory Walker"]
+        S --> Meta["bsarchive.Metadata (Protobuf)"]
+        Meta --> Stream["Binary Chunk Stream"]
+    end
+
+    subgraph Wire["In-Flight Wire Transit"]
+        Stream == "Encrypted P2P Stream" ==> Ingest["Real-time Streaming Ingest"]
+    end
+
+    subgraph ReceiverSide["Receiver Storage Pipeline"]
+        Ingest --> Header["Parse Header Chunks"]
+        Header --> Alloc["Reconstruct Folder Layout"]
+        Alloc --> DirectWrite["Direct Disk Commit & SHA-256 Verification"]
+    end
+
+    classDef sStyle fill:#1E293B,stroke:#3B82F6,stroke-width:1.5px,color:#F8FAFC;
+    classDef wStyle fill:#0F172A,stroke:#10B981,stroke-width:2px,color:#E2E8F0;
+    classDef rStyle fill:#1E293B,stroke:#8B5CF6,stroke-width:1.5px,color:#F8FAFC;
+    class D,S,Meta,Stream sStyle;
+    class Wire,Ingest wStyle;
+    class Header,Alloc,DirectWrite rStyle;
+```
+
+---
+
 ## 🎯 Core Capabilities & Feature Breakdown
 
 <table>

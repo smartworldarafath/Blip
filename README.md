@@ -200,33 +200,29 @@ Unlike conventional zip archives that require compressing the entire directory b
 
 ```text
 Blip/
-├── android-app/                 <-- Reconstructed Android Studio Project (Gradle)
+├── android-app/                 <-- Main Android Studio project (Gradle, Kotlin/Compose)
 │   ├── app/
 │   │   ├── src/main/
-│   │   │   ├── AndroidManifest.xml   <-- Full Manifest with dataSync permissions & share targets
-│   │   │   ├── java/                 <-- 853 reconstructed Java/Kotlin source files
-│   │   │   ├── res/                  <-- 709 merged XML layouts, drawables, strings, audio
+│   │   │   ├── AndroidManifest.xml   <-- Android Application Manifest
+│   │   │   ├── java/                 <-- 853 Java & Kotlin source files
+│   │   │   ├── res/                  <-- 709 XML layouts, drawables, strings, audio
 │   │   │   ├── assets/               <-- android-devices.db & composeResources
 │   │   │   └── jniLibs/arm64-v8a/    <-- libblip.so (Go core), libblip-jni.so, libsentry
-│   │   ├── build.gradle.kts          <-- Dependency and build script
-│   │   └── google-services.json      <-- Firebase configuration
-│   ├── build.gradle.kts              <-- Top-level Gradle configuration
-│   └── settings.gradle.kts           <-- Module definitions
+│   │   ├── build.gradle.kts          <-- App dependencies & build scripts
+│   │   ├── google-services.json      <-- Firebase / Google Services config
+│   │   └── proguard-rules.pro        <-- ProGuard keep rules
+│   ├── build.gradle.kts              <-- Project build configuration
+│   ├── settings.gradle.kts           <-- Module and repository definitions
+│   └── gradle.properties             <-- Memory and JVM options
 │
-├── source/                      <-- JADX Decompiled Java/Kotlin source tree
-├── smali/                       <-- Complete Smali disassembly (11,046 files)
-├── resources/                   <-- Merged APK resources
-├── app-assets/                  <-- Extracted application assets
-├── native-libs/                 <-- Extracted ARM64 native binaries (.so)
-├── dex/                         <-- Extracted Dalvik Executable classes.dex
-├── xapk-analysis/               <-- Extracted APK packages & decompiled trees
-├── third-party/                 <-- Upstream library version manifests & schemas
-│
-├── documentation/               <-- Comprehensive Architecture & Protocol Specs
-│   ├── ARCHITECTURE.md          <-- CMP + JNI + Go core architecture guide
-│   ├── PROTOBUF_SPECIFICATIONS.md <-- Protobuf schemas for bsarchive, State, and Events
-│   ├── NATIVE_COMPONENTS.md     <-- JNI function exports and Go package mapping
-│   └── UI_NAVIGATION.md         <-- Route table and Compose NavHost screen breakdown
+├── source/                      <-- Complete decompiled application sources
+├── smali/                       <-- Smali disassembly bytecode (11,046 files)
+├── resources/                   <-- Application XML resources and graphics
+├── app-assets/                  <-- Bundled application assets & databases
+├── native-libs/                 <-- ARM64 compiled native engine libraries (.so)
+├── dex/                         <-- Base classes.dex bytecode
+├── build-packages/              <-- Distribution APK split builds and configurations
+├── third-party/                 <-- Third-party library manifests and licenses
 │
 ├── assets/                      <-- High-Resolution App Icons & Branding Assets
 │   ├── Blip_macOS.icns          <-- macOS App Icon (Big Sur – Sequoia)
@@ -234,9 +230,16 @@ Blip/
 │   ├── logo.png                 <-- High-res raster branding logo
 │   └── logo_alt.png             <-- Alternative raster branding logo
 │
-├── RECOVERY_REPORT.md           <-- Detailed reconstruction report
-├── RECOVERED_COMPONENTS.md      <-- Discrete component catalog
-└── README.md                    <-- Project documentation
+├── documentation/               <-- Comprehensive Architecture & Protocol Specs
+│   ├── ARCHITECTURE.md          <-- CMP + JNI + Go core architecture guide
+│   ├── PROTOBUF_SPECIFICATIONS.md <-- Protobuf schemas for bsarchive, State, and Events
+│   ├── NATIVE_COMPONENTS.md     <-- JNI function exports and Go package mapping
+│   ├── UI_NAVIGATION.md         <-- Route table and Compose NavHost screen breakdown
+│   ├── BUILD_REPORT.md          <-- Build configuration and component report
+│   ├── COMPONENTS.md            <-- Application modules and service catalog
+│   └── LIMITATIONS.md           <-- Architecture and technical notes
+│
+└── README.md                    <-- Project guide
 ```
 
 ---

@@ -1,0 +1,503 @@
+.class final Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;
+.super Ljava/lang/Object;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+# interfaces
+.implements Ljava/util/ListIterator;
+.implements Lkotlin/jvm/internal/markers/KMappedMarker;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Itr"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/util/ListIterator<",
+        "TE;>;",
+        "Lkotlin/jvm/internal/markers/KMappedMarker;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+
+# direct methods
+.method public constructor <init>(Lkotlin/collections/builders/ListBuilder$BuilderSubList;I)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 5
+    .line 6
+    iput p2, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 7
+    .line 8
+    const/4 p2, -0x1
+
+    .line 9
+    iput p2, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 10
+    .line 11
+    invoke-static {p1}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->d(Lkotlin/collections/builders/ListBuilder$BuilderSubList;)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p1
+
+    .line 15
+    iput p1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->m:I
+
+    .line 16
+    .line 17
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->n:Lkotlin/collections/builders/ListBuilder;
+
+    .line 4
+    .line 5
+    invoke-static {v0}, Lkotlin/collections/builders/ListBuilder;->d(Lkotlin/collections/builders/ListBuilder;)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->m:I
+
+    .line 10
+    .line 11
+    if-ne v0, p0, :cond_0
+
+    .line 12
+    .line 13
+    return-void
+
+    .line 14
+    :cond_0
+    invoke-static {}, Lu2;->d()V
+
+    .line 15
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public final add(Ljava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->a()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 5
+    .line 6
+    add-int/lit8 v1, v0, 0x1
+
+    .line 7
+    .line 8
+    iput v1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 9
+    .line 10
+    iget-object v1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 11
+    .line 12
+    invoke-virtual {v1, v0, p1}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->add(ILjava/lang/Object;)V
+
+    .line 13
+    .line 14
+    .line 15
+    const/4 p1, -0x1
+
+    .line 16
+    iput p1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 17
+    .line 18
+    invoke-static {v1}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->d(Lkotlin/collections/builders/ListBuilder$BuilderSubList;)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p1
+
+    .line 22
+    iput p1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->m:I
+
+    .line 23
+    .line 24
+    return-void
+.end method
+
+.method public final hasNext()Z
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 4
+    .line 5
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->l:I
+
+    .line 6
+    .line 7
+    if-ge v0, p0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x1
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
+.end method
+
+.method public final hasPrevious()Z
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 2
+    .line 3
+    if-lez p0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 8
+    return p0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->a()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 5
+    .line 6
+    iget-object v1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 7
+    .line 8
+    iget v2, v1, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->l:I
+
+    .line 9
+    .line 10
+    if-ge v0, v2, :cond_0
+
+    .line 11
+    .line 12
+    add-int/lit8 v2, v0, 0x1
+
+    .line 13
+    .line 14
+    iput v2, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 15
+    .line 16
+    iput v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 17
+    .line 18
+    iget-object p0, v1, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->j:[Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    iget v1, v1, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->k:I
+
+    .line 21
+    .line 22
+    add-int/2addr v1, v0
+
+    .line 23
+    aget-object p0, p0, v1
+
+    .line 24
+    .line 25
+    return-object p0
+
+    .line 26
+    :cond_0
+    invoke-static {}, Lk8;->o()V
+
+    .line 27
+    .line 28
+    .line 29
+    const/4 p0, 0x0
+
+    .line 30
+    return-object p0
+.end method
+
+.method public final nextIndex()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->a()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 5
+    .line 6
+    if-lez v0, :cond_0
+
+    .line 7
+    .line 8
+    add-int/lit8 v0, v0, -0x1
+
+    .line 9
+    .line 10
+    iput v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 11
+    .line 12
+    iput v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 15
+    .line 16
+    iget-object v1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->j:[Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->k:I
+
+    .line 19
+    .line 20
+    add-int/2addr p0, v0
+
+    .line 21
+    aget-object p0, v1, p0
+
+    .line 22
+    .line 23
+    return-object p0
+
+    .line 24
+    :cond_0
+    invoke-static {}, Lk8;->o()V
+
+    .line 25
+    .line 26
+    .line 27
+    const/4 p0, 0x0
+
+    .line 28
+    return-object p0
+.end method
+
+.method public final previousIndex()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 2
+    .line 3
+    add-int/lit8 p0, p0, -0x1
+
+    .line 4
+    .line 5
+    return p0
+.end method
+
+.method public final remove()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->a()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 5
+    .line 6
+    const/4 v1, -0x1
+
+    .line 7
+    if-eq v0, v1, :cond_0
+
+    .line 8
+    .line 9
+    iget-object v2, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 10
+    .line 11
+    invoke-virtual {v2, v0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->c(I)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 15
+    .line 16
+    iput v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->k:I
+
+    .line 17
+    .line 18
+    iput v1, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 19
+    .line 20
+    invoke-static {v2}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->d(Lkotlin/collections/builders/ListBuilder$BuilderSubList;)I
+
+    .line 21
+    .line 22
+    .line 23
+    move-result v0
+
+    .line 24
+    iput v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->m:I
+
+    .line 25
+    .line 26
+    return-void
+
+    .line 27
+    :cond_0
+    const-string p0, "Call next() or previous() before removing element from the iterator."
+
+    .line 28
+    .line 29
+    invoke-static {p0}, Lu2;->l(Ljava/lang/String;)V
+
+    .line 30
+    .line 31
+    .line 32
+    return-void
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->a()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->l:I
+
+    .line 5
+    .line 6
+    const/4 v1, -0x1
+
+    .line 7
+    if-eq v0, v1, :cond_0
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lkotlin/collections/builders/ListBuilder$BuilderSubList$Itr;->j:Lkotlin/collections/builders/ListBuilder$BuilderSubList;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0, v0, p1}, Lkotlin/collections/builders/ListBuilder$BuilderSubList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+
+    .line 15
+    :cond_0
+    const-string p0, "Call next() or previous() before replacing element from the iterator."
+
+    .line 16
+    .line 17
+    invoke-static {p0}, Lu2;->l(Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+.end method

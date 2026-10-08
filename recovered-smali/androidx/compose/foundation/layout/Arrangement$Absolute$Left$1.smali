@@ -1,0 +1,45 @@
+.class public final Landroidx/compose/foundation/layout/Arrangement$Absolute$Left$1;
+.super Ljava/lang/Object;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+# interfaces
+.implements Landroidx/compose/foundation/layout/Arrangement$Horizontal;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/compose/foundation/layout/Arrangement$Absolute;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
+# virtual methods
+.method public final c(Landroidx/compose/ui/unit/Density;I[ILandroidx/compose/ui/unit/LayoutDirection;[I)V
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    invoke-static {p3, p5, p0}, Landroidx/compose/foundation/layout/Arrangement;->b([I[IZ)V
+
+    .line 3
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "AbsoluteArrangement#Left"
+
+    .line 2
+    .line 3
+    return-object p0
+.end method

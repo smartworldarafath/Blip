@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "38447872007",
+    "project_id": "blip-net",
+    "storage_bucket": "blip-net.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38447872007:android:837cae3ec34cfff89712a2",
+        "android_client_info": {
+          "package_name": "net.blip.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38447872007-nldtegtlbo63ftv196chq0q9f3qt8u5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

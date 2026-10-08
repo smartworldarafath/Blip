@@ -1,0 +1,10 @@
+package androidx.work.impl.model;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+public abstract class WorkSpecKt {
+    public static final WorkGenerationalId a(WorkSpec workSpec) {
+        workSpec.getClass();
+        return new WorkGenerationalId(workSpec.a, workSpec.t);
+    }
+}

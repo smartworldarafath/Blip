@@ -1,0 +1,20 @@
+package androidx.datastore.preferences.protobuf;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+final class MapFieldSchemaLite implements MapFieldSchema {
+    public final MapFieldLite a(Object obj, Object obj2) {
+        MapFieldLite mapFieldLite = (MapFieldLite) obj;
+        MapFieldLite mapFieldLite2 = (MapFieldLite) obj2;
+        if (!mapFieldLite2.isEmpty()) {
+            if (!mapFieldLite.j) {
+                mapFieldLite = mapFieldLite.b();
+            }
+            mapFieldLite.a();
+            if (!mapFieldLite2.isEmpty()) {
+                mapFieldLite.putAll(mapFieldLite2);
+            }
+        }
+        return mapFieldLite;
+    }
+}

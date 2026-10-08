@@ -1,0 +1,12 @@
+package androidx.compose.foundation.pager;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+public interface PageSize {
+
+    /* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+    /* loaded from: classes.dex */
+    public static final class Fill implements PageSize {
+        public static final Fill a = new Object();
+    }
+}

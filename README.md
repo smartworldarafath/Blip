@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://blip.net"><img src="https://img.shields.io/badge/Website-blip.net-blue?style=flat-square" alt="Website" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
-  <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20iOS%20%7C%20Android-orange?style=flat-square" alt="Platforms" />
+  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20iOS-orange?style=flat-square" alt="Platforms" />
   <img src="https://img.shields.io/badge/Encryption-End--to--End%20(TLS%2FAES)-success?style=flat-square" alt="Security" />
 </p>
 
@@ -49,9 +49,62 @@ flowchart LR
     end
 ```
 
-1. **Select**: Choose any file or folder (regardless of size).
-2. **Share**: Send directly to nearby devices or generate a secure, one-time transfer link/code.
-3. **Stream**: The recipient begins receiving bits instantly — no waiting for a complete cloud upload!
+---
+
+## 📁 Repository Structure
+
+```text
+Blip/
+├── recovered-project/           <-- Editable Android Studio project
+│   ├── app/
+│   │   ├── src/main/
+│   │   │   ├── AndroidManifest.xml   <-- Cleaned AndroidManifest
+│   │   │   ├── java/                 <-- 853 reconstructed Java/Kotlin source files
+│   │   │   ├── res/                  <-- 709 merged XML layouts, drawables, strings, audio
+│   │   │   ├── assets/               <-- android-devices.db & composeResources
+│   │   │   └── jniLibs/arm64-v8a/    <-- libblip.so (Go core), libblip-jni.so, libsentry
+│   │   ├── build.gradle.kts          <-- Configured dependencies, plugins, and compile flags
+│   │   ├── google-services.json      <-- Reconstructed Firebase / Google Services config
+│   │   └── proguard-rules.pro        <-- Retained keep rules
+│   ├── build.gradle.kts              <-- Project build configuration
+│   ├── settings.gradle.kts           <-- Module and repository definitions
+│   └── gradle.properties             <-- Memory and JVM options
+│
+├── recovered-source/            <-- Full JADX decompilation (sources and resources)
+├── recovered-smali/             <-- Full Smali disassembly (11,046 files)
+├── recovered-resources/         <-- Merged resources from base & split APKs
+├── recovered-assets/            <-- Assets extracted from the APKs
+├── recovered-native/            <-- Extracted ARM64 native binaries (.so)
+├── recovered-dex/               <-- Extracted classes.dex
+├── original-xapk-analysis/      <-- Extracted APKs & Apktool decoding directories
+├── third-party/                 <-- Library version manifests (.version, .properties, .proto)
+│
+├── documentation/
+│   ├── ARCHITECTURE.md          <-- Hybrid CMP + JNI + Go core architecture
+│   ├── PROTOBUF_SPECIFICATIONS.md <-- Protobuf schemas for bsarchive, State, and Events
+│   ├── NATIVE_COMPONENTS.md     <-- JNI function exports and Go package mapping
+│   └── UI_NAVIGATION.md         <-- Route table and Compose NavHost screen breakdown
+│
+├── RECOVERY_REPORT.md           <-- Detailed recovery report
+├── RECOVERED_COMPONENTS.md      <-- Discrete component catalog
+├── UNRECOVERABLE_COMPONENTS.md  <-- Technical limitations and unrecoverable elements
+└── README.md                    <-- Project guide
+```
+
+---
+
+## 🛠️ Technical Specifications (Android Client)
+
+- **Package**: `net.blip.android`
+- **Version**: 1.2.3 (Code: `10203000`)
+- **Min SDK**: 28 (Android 9.0) \| **Target SDK**: 36 \| **Compile SDK**: 37
+- **UI Framework**: Jetpack Compose + Compose Multiplatform runtime (`1.12.0`)
+- **Serialization**: Square Wire Protobuf (`com.squareup.wire:wire-runtime:4.9.9`)
+- **Native Backend**: Go (Golang v1.26.7) in `libblip.so` bridged via `libblip-jni.so`
+- **Firebase**: Push notifications (FCM), Project ID `blip-net`
+- **Local Database**: SQLite `android-devices.db` (1.4 MB)
+- **Media Playback**: AndroidX Media3 ExoPlayer (`androidx.media3`)
+- **Image Loader**: Coil 3 (`io.coil-kt.coil3`)
 
 ---
 
@@ -64,10 +117,12 @@ This repository includes high-resolution macOS icons located in [`assets/`](asse
 
 ---
 
-## 🛠️ Project Status
+## 🚀 Getting Started with the Project
 
-> [!NOTE]  
-> Code implementation and module structures are currently being assembled. Stay tuned for the upcoming initial releases and build instructions!
+1. Open **Android Studio** (Giraffe or newer recommended).
+2. Choose **Open an Existing Project** and navigate to `recovered-project/`.
+3. Allow Gradle to sync dependencies (requires JDK 17).
+4. Run or assemble the app on an `arm64-v8a` device or emulator.
 
 ---
 

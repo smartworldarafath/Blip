@@ -1,0 +1,16 @@
+package io.sentry.android.replay.util;
+
+import android.os.Handler;
+import android.os.Looper;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+public final class MainLooperHandler {
+    public final Handler a;
+
+    public MainLooperHandler() {
+        Looper mainLooper = Looper.getMainLooper();
+        mainLooper.getClass();
+        this.a = new Handler(mainLooper);
+    }
+}

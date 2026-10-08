@@ -84,7 +84,7 @@ flowchart LR
 
 ```text
 Blip/
-├── recovered-project/           <-- Editable Android Studio project
+├── android-app/                 <-- Editable Android Studio project
 │   ├── app/
 │   │   ├── src/main/
 │   │   │   ├── AndroidManifest.xml   <-- Cleaned AndroidManifest
@@ -99,13 +99,13 @@ Blip/
 │   ├── settings.gradle.kts           <-- Module and repository definitions
 │   └── gradle.properties             <-- Memory and JVM options
 │
-├── recovered-source/            <-- Full JADX decompilation (sources and resources)
-├── recovered-smali/             <-- Full Smali disassembly (11,046 files)
-├── recovered-resources/         <-- Merged resources from base & split APKs
-├── recovered-assets/            <-- Assets extracted from the APKs
-├── recovered-native/            <-- Extracted ARM64 native binaries (.so)
-├── recovered-dex/               <-- Extracted classes.dex
-├── original-xapk-analysis/      <-- Extracted APKs & Apktool decoding directories
+├── source/                      <-- Full JADX decompilation (sources and resources)
+├── smali/                       <-- Full Smali disassembly (11,046 files)
+├── resources/                   <-- Merged resources from base & split APKs
+├── app-assets/                  <-- Assets extracted from the APKs
+├── native-libs/                 <-- Extracted ARM64 native binaries (.so)
+├── dex/                         <-- Extracted classes.dex
+├── xapk-analysis/               <-- Extracted APKs & Apktool decoding directories
 ├── third-party/                 <-- Library version manifests (.version, .properties, .proto)
 │
 ├── documentation/
@@ -150,7 +150,7 @@ This repository includes high-resolution icons located in [`assets/`](assets/):
 ## 🚀 Getting Started with the Project
 
 1. Open **Android Studio** (Giraffe or newer recommended).
-2. Choose **Open an Existing Project** and navigate to `recovered-project/`.
+2. Choose **Open an Existing Project** and navigate to `android-app/`.
 3. Allow Gradle to sync dependencies (requires JDK 17).
 4. Run or assemble the app on an `arm64-v8a` device or emulator.
 
@@ -159,3 +159,4 @@ This repository includes high-resolution icons located in [`assets/`](assets/):
 ## 📄 License
 
 This repository is distributed under the [MIT License](LICENSE).
+

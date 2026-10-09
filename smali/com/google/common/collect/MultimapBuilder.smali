@@ -1,0 +1,42 @@
+.class public abstract Lcom/google/common/collect/MultimapBuilder;
+.super Ljava/lang/Object;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;,
+        Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;,
+        Lcom/google/common/collect/MultimapBuilder$ArrayListSupplier;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K0:",
+        "Ljava/lang/Object;",
+        "V0:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# direct methods
+.method public static a()Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/common/collect/MultimapBuilder$3;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-object v0
+.end method

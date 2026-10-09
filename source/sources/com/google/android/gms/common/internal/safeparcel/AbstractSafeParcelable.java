@@ -1,0 +1,12 @@
+package com.google.android.gms.common.internal.safeparcel;
+
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+public abstract class AbstractSafeParcelable implements Parcelable {
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+}

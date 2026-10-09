@@ -1,0 +1,36 @@
+.class public final Landroidx/compose/foundation/gestures/DragEvent$DragStarted;
+.super Landroidx/compose/foundation/gestures/DragEvent;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/compose/foundation/gestures/DragEvent;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "DragStarted"
+.end annotation
+
+
+# instance fields
+.field public final a:J
+
+
+# direct methods
+.method public constructor <init>(J)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-wide p1, p0, Landroidx/compose/foundation/gestures/DragEvent$DragStarted;->a:J
+
+    .line 5
+    .line 6
+    return-void
+.end method

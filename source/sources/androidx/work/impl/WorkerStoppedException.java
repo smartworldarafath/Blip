@@ -1,0 +1,13 @@
+package androidx.work.impl;
+
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3 */
+/* loaded from: classes.dex */
+public final class WorkerStoppedException extends CancellationException {
+    public final int j;
+
+    public WorkerStoppedException(int i) {
+        this.j = i;
+    }
+}

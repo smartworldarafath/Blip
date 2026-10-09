@@ -1,0 +1,23 @@
+.class public interface abstract Lio/sentry/ITransaction;
+.super Ljava/lang/Object;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+# interfaces
+.implements Lio/sentry/ISpan;
+
+
+# virtual methods
+.method public abstract e(Lio/sentry/SpanStatus;ZLio/sentry/Hint;)V
+.end method
+
+.method public abstract getName()Ljava/lang/String;
+.end method
+
+.method public abstract k()Lio/sentry/ISpan;
+.end method
+
+.method public abstract n()Lio/sentry/protocol/SentryId;
+.end method
+
+.method public abstract p()V
+.end method

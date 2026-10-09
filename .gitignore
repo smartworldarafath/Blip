@@ -1,0 +1,20 @@
+# Gradle & Build Artifacts
+.gradle/
+build/
+app/build/
+*.iml
+.idea/
+
+# OS & Environment
+local.properties
+.DS_Store
+Thumbs.db
+
+# Tools
+tools/
+
+# Binaries & Distribution Packages
+*.apk
+*.xapk
+build-packages/extracted-xapk/
+*.so

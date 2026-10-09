@@ -1,0 +1,20 @@
+.class Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;
+.super Ljava/lang/Object;
+.source "r8-map-id-cdf62a648f83040a9355098cd099c620d8047327d76546f1ea987c21705da9f3"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/common/base/MoreObjects$ToStringHelper;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "ValueHolder"
+.end annotation
+
+
+# instance fields
+.field public a:Ljava/lang/Object;
+
+.field public b:Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;
